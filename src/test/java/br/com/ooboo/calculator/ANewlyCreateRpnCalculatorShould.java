@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RpnCalculatorTest {
+public class ANewlyCreateRpnCalculatorShould {
 
 	private RpnCalculator calculator;
 
@@ -16,12 +16,12 @@ public class RpnCalculatorTest {
 	}
 	
 	@Test
-	public void NewCalculatorHas0InItsAccumulator() {
+	public void Have0InItsAccumulator() {
 		Assert.assertEquals(BigDecimal.ZERO, calculator.getAccumulator());
 	}
 	
 	@Test
-	public void NewCalculatorShouldAllowItsAccumulatorToBeSet() {
+	public void AllowItsAccumulatorToBeSet() {
 		BigDecimal value = new BigDecimal(42);
 		calculator.setAccumulator(value);
 		Assert.assertEquals(value, calculator.getAccumulator());
