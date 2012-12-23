@@ -13,4 +13,12 @@ public class RpnCalculatorTest {
 		Assert.assertEquals(BigDecimal.ZERO, calculator.getAccumulator());
 	}
 	
+	@Test
+	public void NewCalculatorShouldAllowItsAccumulatorToBeSet() {
+		BigDecimal value = new BigDecimal(42);
+		RpnCalculator calculator = new RpnCalculator();
+		calculator.setAccumulator(value);
+		Assert.assertEquals(value, calculator.getAccumulator());
+	}
+
 }
