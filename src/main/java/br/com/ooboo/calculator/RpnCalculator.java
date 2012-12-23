@@ -5,27 +5,28 @@ import java.util.Stack;
 
 public class RpnCalculator {
 	
-	private Stack<BigDecimal> stack = new Stack<>();
-
-	private BigDecimal accumulator = BigDecimal.ZERO;
+	private Stack<BigDecimal> values = new Stack<>();
 
 	public BigDecimal getAccumulator() {
-		return accumulator;
+		if (values.size() > 0)
+			return values.peek();
+		else
+			return BigDecimal.ZERO;
 	}
 
 	public void setAccumulator(BigDecimal value) {
-		accumulator = value;
+		if (values.size() > 0)
+			values.pop();
+		values.push(value);
 	}
 
 	public void enter() {
-		stack.push(accumulator);
+		values.push(getAccumulator());
 	}
 
 	public void drop() {
-		if (!stack.isEmpty())
-			accumulator = stack.pop();
-		else
-			accumulator = BigDecimal.ZERO;
+		if (values.size() > 0)
+			values.pop();
 	}
 	
 }
