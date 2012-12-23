@@ -1,6 +1,7 @@
 package br.com.ooboo.calculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.math.BigDecimal;
 
@@ -26,6 +27,17 @@ public class ANewlyCreateRpnCalculatorShould {
 		BigDecimal value = new BigDecimal(42);
 		calculator.setAccumulator(value);
 		assertEquals(value, calculator.getAccumulator());
+	}
+	
+	@Test
+	public void NotThrowAnExceptionWhenDropCalled() {
+		Exception e = null;
+		try {
+			calculator.drop();
+		} catch (Exception ee) {
+			e = ee;
+		}
+		assertNull(e);
 	}
 
 }
