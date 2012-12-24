@@ -1,23 +1,17 @@
 package br.com.ooboo.calculator;
 
 import java.math.BigDecimal;
-import java.util.Stack;
 
 public class RpnCalculator {
 	
-	private Stack<BigDecimal> values = new Stack<>();
+	private OperandStack values = new OperandStack();
 
 	public BigDecimal getAccumulator() {
-		if (values.size() > 0)
-			return values.peek();
-		else
-			return BigDecimal.ZERO;
+		return values.peek();
 	}
 
 	public void setAccumulator(BigDecimal value) {
-		if (values.size() > 0)
-			values.pop();
-		values.push(value);
+		values.replaceTop(value);
 	}
 
 	public void enter() {
@@ -25,8 +19,7 @@ public class RpnCalculator {
 	}
 
 	public void drop() {
-		if (values.size() > 0)
-			values.pop();
+		values.pop();
 	}
 	
 }
