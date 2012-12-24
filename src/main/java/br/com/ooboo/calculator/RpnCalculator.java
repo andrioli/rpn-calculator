@@ -27,25 +27,13 @@ public class RpnCalculator {
 		values.pop();
 	}
 
-	private void add() {
-		new Add().execute(values);
-	}
-
-	private void subtract() {
-		new Subtract().execute(values);
-	}
-
-	private void factorial() {
-		new Factorial().execute(values); 
-	}
-
 	public void execute(String operatorName) {
 		if ("+".equals(operatorName)) {
-			add();
+			new Add().execute(values);
 		} else if ("-".equals(operatorName)) {
-			subtract();
+			new Subtract().execute(values);
 		} else if ("!".equals(operatorName)) {
-			factorial();
+			new Factorial().execute(values);
 		} else {
 			throw new NoSuchOperatorException(
 					"Invalid operator named: " + operatorName);
