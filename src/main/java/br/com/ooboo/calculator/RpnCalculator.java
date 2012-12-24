@@ -3,6 +3,7 @@ package br.com.ooboo.calculator;
 import java.math.BigDecimal;
 
 import br.com.ooboo.calculator.operator.Add;
+import br.com.ooboo.calculator.operator.Divide;
 import br.com.ooboo.calculator.operator.Factorial;
 import br.com.ooboo.calculator.operator.MathOperator;
 import br.com.ooboo.calculator.operator.Multiply;
@@ -45,6 +46,8 @@ public class RpnCalculator {
 			op = new Factorial();
 		} else if ("*".equals(operatorName)) {
 			op = new Multiply();
+		} else if ("/".equals(operatorName)) {
+			op = new Divide();
 		} else {
 			throw new NoSuchOperatorException(
 					"Invalid operator named: " + operatorName);

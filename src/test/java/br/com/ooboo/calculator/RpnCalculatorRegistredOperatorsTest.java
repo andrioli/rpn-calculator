@@ -1,7 +1,5 @@
 package br.com.ooboo.calculator;
 
-import static org.junit.Assert.assertEquals;
-
 import java.math.BigDecimal;
 
 import org.junit.Before;
@@ -13,39 +11,35 @@ public class RpnCalculatorRegistredOperatorsTest {
 	
 	private RpnCalculator calculator;
 	
-	BigDecimal value1 = new BigDecimal(42);
-	BigDecimal value2 = new BigDecimal(4);
-	
 	@Before
 	public void init() {
 		calculator = new RpnCalculator();
-		calculator.setAccumulator(value1);
-		calculator.enter();
-		calculator.setAccumulator(value2);
 	}
 
 	@Test
-	public void ShouldBeAbleToAdd() {
+	public void ShouldBeAbleToExecuteAdd() {
 		calculator.execute("+");
-		assertEquals(new BigDecimal(46), calculator.getAccumulator());
 	}
 	
 	@Test
-	public void ShouldBeAbleToSubtract() {
+	public void ShouldBeAbleToExecuteSubtract() {
 		calculator.execute("-");
-		assertEquals(new BigDecimal(38), calculator.getAccumulator());
 	}
 	
 	@Test
-	public void ShouldBeAbleToComputeFactorial() {
+	public void ShouldBeAbleToExecuteFactorial() {
 		calculator.execute("!");
-		assertEquals(new BigDecimal(24), calculator.getAccumulator());
 	}
 	
 	@Test
-	public void ShouldBeAbleToMultiply() {
+	public void ShouldBeAbleToExecuteMultiply() {
 		calculator.execute("*");
-		assertEquals(new BigDecimal(168), calculator.getAccumulator());
+	}
+	
+	@Test
+	public void ShouldBeAbleToExecuteDivide() {
+		calculator.setAccumulator(BigDecimal.ONE);
+		calculator.execute("/");
 	}
 	
 	@Test(expected = NoSuchOperatorException.class)
