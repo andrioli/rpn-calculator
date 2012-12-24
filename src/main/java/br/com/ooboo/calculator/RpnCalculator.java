@@ -53,17 +53,13 @@ public class RpnCalculator {
 	}
 
 	public void execute(String operatorName) {
-		switch (operatorName) {
-		case "+":
+		if ("+".equals(operatorName)) {
 			add();
-			break;
-		case "-":
+		} else if ("-".equals(operatorName)) {
 			subtract();
-			break;
-		case "!":
+		} else if ("!".equals(operatorName)) {
 			factorial();
-			break;
-		default:
+		} else {
 			throw new NoSuchOperatorException(
 					"Invalid operator named: " + operatorName);
 		}
