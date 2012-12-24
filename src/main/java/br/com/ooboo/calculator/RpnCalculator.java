@@ -24,7 +24,7 @@ public class RpnCalculator {
 		values.pop();
 	}
 
-	public void add() {
+	private void add() {
 		BigDecimal rhs = getAccumulator();
 		values.pop();
 		BigDecimal lhs = getAccumulator();
@@ -32,7 +32,7 @@ public class RpnCalculator {
 		setAccumulator(value);
 	}
 
-	public void subtract() {
+	private void subtract() {
 		BigDecimal rhs = getAccumulator();
 		drop();
 		BigDecimal lhs = getAccumulator();
@@ -40,7 +40,7 @@ public class RpnCalculator {
 		setAccumulator(value);
 	}
 
-	public void factorial() {
+	private void factorial() {
 		BigDecimal operand = getAccumulator();
 		BigDecimal result = BigDecimal.ONE;
 		
