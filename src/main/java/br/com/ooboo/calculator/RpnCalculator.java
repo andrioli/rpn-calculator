@@ -2,7 +2,10 @@ package br.com.ooboo.calculator;
 
 import java.math.BigDecimal;
 
+import br.com.ooboo.calculator.operator.Add;
+import br.com.ooboo.calculator.operator.Factorial;
 import br.com.ooboo.calculator.operator.NoSuchOperatorException;
+import br.com.ooboo.calculator.operator.Subtract;
 
 public class RpnCalculator {
 	
@@ -25,31 +28,15 @@ public class RpnCalculator {
 	}
 
 	private void add() {
-		BigDecimal rhs = getAccumulator();
-		values.pop();
-		BigDecimal lhs = getAccumulator();
-		BigDecimal value = lhs.add(rhs);
-		setAccumulator(value);
+		new Add().execute(values);
 	}
 
 	private void subtract() {
-		BigDecimal rhs = getAccumulator();
-		drop();
-		BigDecimal lhs = getAccumulator();
-		BigDecimal value = lhs.subtract(rhs);
-		setAccumulator(value);
+		new Subtract().execute(values);
 	}
 
 	private void factorial() {
-		BigDecimal operand = getAccumulator();
-		BigDecimal result = BigDecimal.ONE;
-		
-		while (operand.compareTo(BigDecimal.ONE) > 0) {
-			result = result.multiply(operand);
-			operand = operand.subtract(BigDecimal.ONE);
-		}
-		
-		setAccumulator(result);
+		new Factorial().execute(values); 
 	}
 
 	public void execute(String operatorName) {
