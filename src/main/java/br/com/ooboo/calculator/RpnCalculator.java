@@ -37,12 +37,8 @@ public class RpnCalculator {
 	}
 
 	public void execute(String operatorName) {
-		MathOperator op = findOperatorNamed(operatorName);
+		MathOperator op = factory.findOperatorNamed(operatorName);
 		op.execute(values);
-	}
-
-	private MathOperator findOperatorNamed(String operatorName) {
-		return factory.findOperatorNamed(operatorName);
 	}
 	
 }
