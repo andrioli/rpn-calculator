@@ -2,6 +2,8 @@ package br.com.ooboo.calculator;
 
 import java.math.BigDecimal;
 
+import br.com.ooboo.calculator.operator.NoSuchOperatorException;
+
 public class RpnCalculator {
 	
 	private OperandStack values = new OperandStack();
@@ -48,6 +50,23 @@ public class RpnCalculator {
 		}
 		
 		setAccumulator(result);
+	}
+
+	public void execute(String operatorName) {
+		switch (operatorName) {
+		case "+":
+			add();
+			break;
+		case "-":
+			subtract();
+			break;
+		case "!":
+			factorial();
+			break;
+		default:
+			throw new NoSuchOperatorException(
+					"Invalid operator named: " + operatorName);
+		}
 	}
 	
 }
