@@ -6,21 +6,16 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import br.com.ooboo.calculator.OperandStack;
-
 public class MultiplyTest {
 
 	@Test
 	public void ShouldMultiplyCorrectly() {
-		OperandStack stack = new OperandStack();
-		stack.push(new BigDecimal(12));
-		stack.push(new BigDecimal(2));
-		
 		Multiply op = new Multiply();
 		
-		op.execute(stack);
+		BigDecimal result = op.executeImplementation(
+				new BigDecimal(12), new BigDecimal(2));
 		
-		assertEquals(new BigDecimal(24), stack.peek());
+		assertEquals(new BigDecimal(24), result);
 	}
 	
 }

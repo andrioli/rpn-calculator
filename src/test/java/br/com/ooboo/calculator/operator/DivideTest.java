@@ -4,32 +4,28 @@ import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import br.com.ooboo.calculator.OperandStack;
-
 public class DivideTest {
+	
+	private Divide op;
+
+	@Before
+	public void init() {
+		op = new Divide();
+	}
+	
 	@Test
 	public void ShouldDivideCorrectly() {
-		OperandStack stack = new OperandStack();
-		stack.push(new BigDecimal(12));
-		stack.push(new BigDecimal(2));
+		BigDecimal result = op.executeImplementation(
+				new BigDecimal(12), new BigDecimal(2));
 		
-		Divide op = new Divide();
-		
-		op.execute(stack);
-		
-		assertEquals(new BigDecimal(6), stack.peek());
+		assertEquals(new BigDecimal(6), result);
 	}
 	
 	@Test(expected=ArithmeticException.class)
 	public void ShouldThrowExceptionWhendDivideByZero() {
-		OperandStack stack = new OperandStack();
-		stack.push(new BigDecimal(12));
-		stack.push(new BigDecimal(0));
-		
-		Divide op = new Divide();
-		
-		op.execute(stack);
+		op.executeImplementation(new BigDecimal(12), new BigDecimal(0));
 	}
 }
