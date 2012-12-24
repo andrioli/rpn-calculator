@@ -42,6 +42,12 @@ public class RpnCalculatorRegistredOperatorsTest {
 		assertEquals(new BigDecimal(24), calculator.getAccumulator());
 	}
 	
+	@Test
+	public void ShouldBeAbleToMultiply() {
+		calculator.execute("*");
+		assertEquals(new BigDecimal(168), calculator.getAccumulator());
+	}
+	
 	@Test(expected = NoSuchOperatorException.class)
 	public void ShouldThrowExceptionForUnknownOperator() {
 		calculator.execute("bogus ___ operator");
