@@ -3,10 +3,22 @@ package br.com.ooboo.calculator;
 import java.math.BigDecimal;
 
 import br.com.ooboo.calculator.operator.MathOperator;
+import br.com.ooboo.calculator.operator.MathOperatorFactory;
+import br.com.ooboo.calculator.operator.ShortNamedMathOperatorFactory;
 
 public class RpnCalculator {
 	
 	private OperandStack values = new OperandStack();
+	
+	private MathOperatorFactory factory;
+	
+	public RpnCalculator() {
+		this(new ShortNamedMathOperatorFactory());
+	}
+	
+	public RpnCalculator(MathOperatorFactory factory) {
+		this.factory = factory;
+	}
 
 	public BigDecimal getAccumulator() {
 		return values.peek();
@@ -30,7 +42,7 @@ public class RpnCalculator {
 	}
 
 	private MathOperator findOperatorNamed(String operatorName) {
-		return new MathOperatorFactory().findOperatorNamed(operatorName);
+		return factory.findOperatorNamed(operatorName);
 	}
 	
 }

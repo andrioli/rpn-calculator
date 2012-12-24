@@ -1,21 +1,14 @@
-package br.com.ooboo.calculator;
+package br.com.ooboo.calculator.operator;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import br.com.ooboo.calculator.operator.Add;
-import br.com.ooboo.calculator.operator.Divide;
-import br.com.ooboo.calculator.operator.Factorial;
-import br.com.ooboo.calculator.operator.MathOperator;
-import br.com.ooboo.calculator.operator.Multiply;
-import br.com.ooboo.calculator.operator.NoSuchOperatorException;
-import br.com.ooboo.calculator.operator.Subtract;
 
-public class MathOperatorFactory {
+public class ShortNamedMathOperatorFactory implements MathOperatorFactory {
 	
 	private Map<String, MathOperator> operatorsByName;
 	
-	public MathOperatorFactory() {
+	public ShortNamedMathOperatorFactory() {
 		operatorsByName = new ConcurrentHashMap<>();
 		registerOperators();
 	}
@@ -28,6 +21,7 @@ public class MathOperatorFactory {
 		operatorsByName.put("!", new Factorial());
 	}
 
+	@Override
 	public MathOperator findOperatorNamed(String operatorName) {
 		MathOperator op = operatorsByName.get(operatorName);
 		
