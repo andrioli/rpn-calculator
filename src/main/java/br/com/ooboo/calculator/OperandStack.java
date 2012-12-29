@@ -27,4 +27,8 @@ public class OperandStack {
 			values.pop();
 	}
 
+	public int size() {
+		return values.size();
+	}
+
 }

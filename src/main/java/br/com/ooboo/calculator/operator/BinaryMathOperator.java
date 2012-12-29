@@ -12,7 +12,7 @@ public abstract class BinaryMathOperator implements MathOperator {
 		values.pop();
 		BigDecimal lhs = values.peek();
 		BigDecimal result = executeImplementation(lhs, rhs);
-		values.push(result);
+		values.replaceTop(result);
 	}
 
 	protected abstract BigDecimal executeImplementation(BigDecimal lhs, BigDecimal rhs);

@@ -6,16 +6,6 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.ooboo.calculator.operator.Add;
-import br.com.ooboo.calculator.operator.Divide;
-import br.com.ooboo.calculator.operator.Factorial;
-import br.com.ooboo.calculator.operator.MathOperator;
-import br.com.ooboo.calculator.operator.MathOperatorFactory;
-import br.com.ooboo.calculator.operator.Multiply;
-import br.com.ooboo.calculator.operator.NoSuchOperatorException;
-import br.com.ooboo.calculator.operator.ShortNamedMathOperatorFactory;
-import br.com.ooboo.calculator.operator.Subtract;
-
 public class MathOperatorFactoryRegistredOperatorsTest {
 
 	private MathOperatorFactory factory;

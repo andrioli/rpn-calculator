@@ -1,5 +1,7 @@
 package br.com.ooboo.calculator.operator;
 
+import static org.junit.Assert.assertEquals;
+
 import java.math.BigDecimal;
 
 import org.junit.Before;
@@ -49,6 +51,17 @@ public class ABinaryMathOperatorShould {
 	@Test
 	public void StoreResultsOnStack() {
 		mockOp.execute(stackMock);
-		verify(stackMock, times(1)).push(BigDecimal.ONE);
+		verify(stackMock, times(1)).replaceTop(BigDecimal.ONE);
+	}
+	
+	@Test
+	public void ShouldReduceStackSizeBy1() {
+		OperandStack stack = new OperandStack();
+		stack.push(BigDecimal.ONE);
+		stack.push(BigDecimal.ONE);
+		
+		mockOp.execute(stack);
+		
+		assertEquals(1, stack.size());
 	}
 }
