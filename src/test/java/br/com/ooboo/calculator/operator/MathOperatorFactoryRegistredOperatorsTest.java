@@ -44,6 +44,12 @@ public class MathOperatorFactoryRegistredOperatorsTest {
 		MathOperator op = factory.findOperatorNamed("/");
 		assertThat(op, instanceOf(Divide.class));
 	}
+	
+	@Test
+	public void ShouldBeAbleToFindSum() {
+		MathOperator op = factory.findOperatorNamed("sum");
+		assertThat(op, instanceOf(Sum.class));
+	}
 
 	@Test(expected = NoSuchOperatorException.class)
 	public void ShouldThrowExceptionForUnknownOperator() {

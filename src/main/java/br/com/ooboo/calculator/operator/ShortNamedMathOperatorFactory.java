@@ -19,6 +19,7 @@ public class ShortNamedMathOperatorFactory implements MathOperatorFactory {
 		operatorsByName.put("*", new Multiply());
 		operatorsByName.put("/", new Divide());
 		operatorsByName.put("!", new Factorial());
+		operatorsByName.put("sum", new Sum());
 	}
 
 	@Override

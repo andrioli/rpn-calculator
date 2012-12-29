@@ -4,10 +4,12 @@ import br.com.ooboo.calculator.OperandStack;
 
 public class Sum implements MathOperator {
 
+	private static final Add ADD = new Add();
+
 	@Override
 	public void execute(OperandStack values) {
 		while (values.size() > 1) {
-			new Add().execute(values);
+			ADD.execute(values);
 		}
 	}
 
