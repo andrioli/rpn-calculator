@@ -42,4 +42,5 @@ public class RpnCalculatorShould {
 		RpnCalculator calculator = new RpnCalculator(new FakeMathOperatorFactory());
 		calculator.execute("+");
 	}
+	
 }

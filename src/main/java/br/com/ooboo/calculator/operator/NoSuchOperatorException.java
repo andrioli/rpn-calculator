@@ -11,5 +11,4 @@ public class NoSuchOperatorException extends RuntimeException {
 		super(message);
 	}
 
-
 }

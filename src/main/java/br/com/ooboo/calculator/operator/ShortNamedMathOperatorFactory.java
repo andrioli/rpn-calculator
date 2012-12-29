@@ -3,7 +3,6 @@ package br.com.ooboo.calculator.operator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 public class ShortNamedMathOperatorFactory implements MathOperatorFactory {
 	
 	private Map<String, MathOperator> operatorsByName;

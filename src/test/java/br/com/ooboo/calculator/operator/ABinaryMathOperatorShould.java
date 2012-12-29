@@ -64,4 +64,5 @@ public class ABinaryMathOperatorShould {
 		
 		assertEquals(1, stack.size());
 	}
+	
 }

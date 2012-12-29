@@ -12,6 +12,7 @@ import br.com.ooboo.calculator.OperandStack;
 public class FactorialTest {
 	
 	private Factorial op;
+	
 	private OperandStack stack;
 
 	@Before

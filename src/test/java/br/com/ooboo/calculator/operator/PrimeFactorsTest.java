@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class PrimeFactorsTest {
 	
 	private BigDecimal value;
+	
 	private OperandStack stack;
 
 	@Test

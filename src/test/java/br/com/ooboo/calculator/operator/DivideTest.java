@@ -28,4 +28,5 @@ public class DivideTest {
 	public void ShouldThrowExceptionWhendDivideByZero() {
 		op.executeImplementation(new BigDecimal(12), new BigDecimal(0));
 	}
+	
 }
