@@ -20,6 +20,7 @@ public class ShortNamedMathOperatorFactory implements MathOperatorFactory {
 		operatorsByName.put("/", new Divide());
 		operatorsByName.put("!", new Factorial());
 		operatorsByName.put("sum", new Sum());
+		operatorsByName.put("primeFactors", new PrimeFactors());
 	}
 
 	@Override

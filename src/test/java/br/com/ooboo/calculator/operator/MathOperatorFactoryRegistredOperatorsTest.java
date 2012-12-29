@@ -50,6 +50,12 @@ public class MathOperatorFactoryRegistredOperatorsTest {
 		MathOperator op = factory.findOperatorNamed("sum");
 		assertThat(op, instanceOf(Sum.class));
 	}
+	
+	@Test
+	public void ShouldBeAbleToFindPrimeFactors() {
+		MathOperator op = factory.findOperatorNamed("primeFactors");
+		assertThat(op, instanceOf(PrimeFactors.class));
+	}
 
 	@Test(expected = NoSuchOperatorException.class)
 	public void ShouldThrowExceptionForUnknownOperator() {
