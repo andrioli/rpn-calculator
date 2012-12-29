@@ -21,9 +21,6 @@ public class PrimeFactors implements MathOperator {
 			}
 			divisor = divisor.add(BigDecimal.ONE);
 		}
-			
-		if (value.compareTo(TWO) >= 0)
-			values.push(value);
 	}
 
 }
